@@ -1,0 +1,308 @@
+
+/* Footer Styles*/
+
+#contact {
+
+    background: linear-gradient(45deg, black, #333);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+}
+
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+.contact-section:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: linear-gradient(45deg, #E8DED1, #333);
+   z-index: -1;
+}
+
+
+.subscribe-section,
+.social-media-section,
+.dropdown-buttons {
+  flex: 1;
+}
+
+
+
+.social-media-section p{
+ margin: 10px;
+} 
+
+.social-icons a {
+
+display: inline-block;
+margin-right: 15px;
+font-size: 24px;
+color: white;
+transition: color 0.3s ease;
+margin-bottom: 10px;
+
+
+}
+
+.social-icons a:hover {
+
+color: #e1c5c0;
+transform: scale(1.3);
+
+}
+
+
+.dropdown-content .location:hover{
+
+color: #e1c5c0;
+
+}
+
+.dropdown-content .phone:hover{
+
+color: #e1c5c0;
+
+}
+
+.dropdown-content .email:hover {
+
+color: #e1c5c0;
+}
+
+.dropdown-content .time:hover{
+
+color: #e1c5c0;
+
+}
+
+#logo_img{
+
+max-width: 50px;
+
+}
+
+#logo_img:hover{
+
+transform: scale(1.3);
+ 
+}
+
+
+.subscribe-section h2 {
+
+font-size: 28px;
+margin-bottom: 20px;
+transform: perspective(1000px) rotateY(0deg);
+transition: transform 0.4s ease;
+
+}
+
+
+/* 3D Effect for Heading 2 */
+.subscribe-section h2:hover {
+
+transform: perspective(1000px) rotateY(20deg); 
+}
+
+
+.subscribe-section form button {
+padding: 10px;
+background-color: #333;
+color: white;
+border: 1px solid #333;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.subscribe-section form button:hover {
+background-color: #555;
+}
+
+.location, .phone, .email, .time {
+
+font-size: 16px;
+margin-bottom: 15px;
+text-transform: capitalize;
+color: white; 
+transition: color 0.3s ease ; 
+
+}
+
+
+.dropdown-btn {
+
+display: block;
+width: 100%;
+color: white;
+padding: 10px;
+margin-bottom: 5px;
+border: none;
+background: none;
+cursor: pointer;
+font-size: 16px;
+position: relative;
+}
+
+.dropdown-content {
+
+display: none;
+background-color: #333;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+border: 2px solid white;
+border-radius: 5px;
+padding: 10px;
+z-index: 1;
+position: relative;
+}
+
+
+.dropdown-btn:hover,
+.dropdown-content a:hover {
+color: #E8D1D3;
+}
+
+
+.subscribe-section button {
+margin-left: 5px;
+display: inline-block;
+}
+
+
+.dropdown-btn::after {
+content: '\25BC'; /* Down arrow character */
+position: absolute;
+top: 50%;
+
+
+transform: translateY(-50%);
+transition: transform 0.3s ease;
+
+}
+
+
+.dropdown-btn.active::after {
+
+transform: translateY(-50%) rotateX(180deg);
+
+
+}
+
+
+.dropdown-content a {
+display: block;
+color: white;
+text-decoration: none;
+padding: 8px 0;
+font-size: 14px;
+}
+
+
+
+.dropdown-content a:hover {
+background-color: #555;
+}
+
+
+
+.copyright-text{
+
+color: #E8D1D3;
+}
+
+
+.subscribe-section form input {
+padding: 10px;
+border: 3px solid #ccc;
+border-radius: 5px;
+}
+
+
+.subscribe-section input[type="email"] {
+width: 250px; 
+padding: 10px; 
+margin: 10px;
+
+}
+
+
+.subscribe-section input[type="email"],
+.subscribe-section button {
+margin-right: 10px; 
+}
+
+
+.subscribe-section button {
+margin-left: 5px;
+display: inline-block;
+padding: 10px 20px;
+border: 1px solid white; 
+background-color: transparent; 
+border-radius: 10px;
+color: #fff;
+cursor: pointer;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+
+
+.subscribe-section button:hover {
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+}
+
+
+.subscribe-section button:hover {
+border-color: #e1c5c0;
+}
+
+
+.subscribe-section button:hover::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, #e1c5c0);
+transition: left 0.3s ease;
+}
+
+#scrollToTop {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: #333;
+color: white;
+padding: 10px;
+border: 1px solid #555;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTop:hover {
+background-color: #555;
+}
+
+#scrollToTop i {
+font-size: 20px;
+}
+
+.subbox a:focus {
+outline: none;
+border: none;
+}
+
