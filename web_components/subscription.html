@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for subscribing!</title>
+
+<style>
+
+
+       /* Styles for the confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .thank-you-container {
+            max-width: 600px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            color: #E8D1D3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            color: black;
+        }
+
+  </style>
+
+
+
+</head>
+
+<body>
+
+
+<canvas id="confetti-canvas"></canvas>
+    <div  class="thank-you-container" >
+        <img src="Images/Footer/subscription.webp" alt="Thank You Image">
+        <h1>Thank You For Subscribing!</h1>
+        <p>We're excited to have you on board. You'll now receive our latest updates, exclusive offers, and more.</p>
+        <p>Stay tuned, and feel free to explore our <a href="index.php">website</a> for more.</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var confettiCanvas = document.getElementById("confetti-canvas");
+            var confettiContext = confettiCanvas.getContext("2d");
+    
+            function resizeCanvas() {
+                confettiCanvas.width = window.innerWidth;
+                confettiCanvas.height = window.innerHeight;
+            }
+    
+            function createConfetti(elapsedTime) {
+                confettiContext.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    
+                // Customization of confetti appearance and behavior
+                var confettiSize = 6;
+                var confettiColor = ["#E8D1D3", "#FAD02E", "#6C757D", "#8FD4D9"];
+                var confettiSpeed = 0.1; 
+    
+                for (var i = 0; i < 50; i++) {
+                    var x = Math.random() * confettiCanvas.width;
+                    var y = Math.random() * confettiCanvas.height;
+                    var color = confettiColor[Math.floor(Math.random() * confettiColor.length)];
+    
+                    confettiContext.beginPath();
+                    confettiContext.arc(x, y, confettiSize, 0, 2 * Math.PI);
+                    confettiContext.fillStyle = color;
+                    confettiContext.fill();
+    
+                    y += confettiSpeed * elapsedTime;
+                }
+            }
+    
+            function startConfetti() {
+                var confettiDuration = 3000; 
+                var startTime = Date.now();
+    
+                function animate() {
+                    var currentTime = Date.now();
+                    var elapsedTime = currentTime - startTime;
+    
+                    if (elapsedTime < confettiDuration) {
+                        createConfetti(elapsedTime);
+                        requestAnimationFrame(animate);
+                    } else {
+                        // Resets background color to white after confetti duration
+                        document.body.style.backgroundColor = "#E8D1D3";
+                        confettiCanvas.style.display = "none"; // Hides the confetti canvas
+                    }
+                }
+    
+                animate();
+            }
+    
+            window.addEventListener("resize", resizeCanvas);
+            resizeCanvas();
+            startConfetti();
+        });
+    </script>
+    
+    
+
+
+</body>
+</html>
